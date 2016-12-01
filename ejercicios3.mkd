@@ -1,0 +1,141 @@
+# Práctica
+
+## Ejercicio 1.
+
+Darse de alta en algún servicio PaaS tal como Heroku, Nodejitsu, BlueMix u OpenShift.
+
+
+## Ejercicio 2.
+
+Crear una aplicación en OpenShift o en algún otro PaaS en el que se haya dado uno de alta. Realizar un despliegue de prueba usando alguno de los ejemplos.
+
+Aprovechando que en el ejercicio anterior me di de alta en *Heroku*, llevaré a cabo la creación de una aplicación en este PaaS.
+
+El primer paso es instalar Heroky en el PC, con el siguiente comando:
+
+> wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+Comprobamos que está instalado con el siguiente comando:
+
+![Versión Heroku](http://i345.photobucket.com/albums/p391/maribhez/versionheroku_zpsluknoqf1.png "Versión Heroku.")
+
+Además, será necesario tener instalado en nuestro sistema *Python*, *virtualenv* y *PostgreSQL* (este último por ser el motor de Heroku).
+
+
+Para empezar a configurar hay que crear una carpeta *virtualenv* con el siguiente comando:
+
+> virtualenv proyecto_hito3 
+
+Y se activa con:
+
+> source bin/activate
+
+Para empezar con la aplicación y desplegarla en Heroku uno de los pasos es iniciar sesión y eso es lo que hacemos en:
+
+|[Inicio de sesión](http://i345.photobucket.com/albums/p391/maribhez/login_heroku_zpsko85ovnp.png "Iniciar sesión")
+
+
+Clonamos el repositorio que vamos a usar: 
+
+![Clonado de repositorio](http://i345.photobucket.com/albums/p391/maribhez/clonado_zpstbuidwzw.png "Clonado de repositorio")
+
+Ahora, creamos la aplicación con el comando *heroku create*.
+
+![Crear aplicación](http://i345.photobucket.com/albums/p391/maribhez/create_app_zps8picldfg.png "Crear aplicación")
+
+Insertamos *git push heroku master* para despegar el código. 
+
+![Despligue](http://i345.photobucket.com/albums/p391/maribhez/masterheroku_zpsv3jegxcz.png "Despliegue")
+
+Y a modo de comprobación: *heroku ps:scale web=1*, obteniendo como resultado la muestra de tener una instancia creada y ejecutándose.
+
+![Comprobacion](http://i345.photobucket.com/albums/p391/maribhez/scale_zpshnnnwzhu.png "Comprobacion")
+
+Para lanzar desde el navegador nuestra app usamos *heroku open*.
+
+![Open](http://i345.photobucket.com/albums/p391/maribhez/ventana_open_zpsfgnycect.png "Open")
+
+
+Ahora, como siguiente paso, definimos el *Procfile*, que debe estar definido en nuestro directorio raíz y es donde declaramos los comandos que deben ser ejecutados al arrancar nuestra aplicación. Y además, para que nuestra aplicación se ejecute hay que definir nuestros *dynos*, que son los contenedores que ejecutan nuestros comandos. 
+
+
+![Procfile](http://i345.photobucket.com/albums/p391/maribhez/procfile_zpsnqagepzy.png "Procfile")
+
+
+![Dynos](http://i345.photobucket.com/albums/p391/maribhez/procfile_zpsnqagepzy.png "Dynos")
+
+Instalamos las dependencias haciendo uso del siguiente comando:
+
+![Dependencias](http://i345.photobucket.com/albums/p391/maribhez/dependencias_zpsnebvx3qc.png "Dependencias.")
+
+Para seguir con la instalación lanzamos localmente la aplicación usando:
+
+> python manage.py collectstatic
+
+[Run local](http://i345.photobucket.com/albums/p391/maribhez/run_local_zpsgzepfwjo.png "Run local")
+
+Y: 
+ 
+ >heroku local web
+ 
+[Heroky local web](http://i345.photobucket.com/albums/p391/maribhez/inicio_app_zpsenmef4fm.png "Heroku local web")
+
+
+Y ahora podemos entrar a nuestra web introduciendo en un navegador **localhost:5000**, con lo que queda comprobado que podemos lanzar la aplicación localmente.
+
+Modificamos el archivo donde estaban incluidas las dependencias para dejarlo de la siguiente manera y la vista que será mostrada:
+
+[Dependencias modificado](http://i345.photobucket.com/albums/p391/maribhez/requests_zpso8y2ucww.png "Dependencias modificado")
+
+[Views modificado](http://i345.photobucket.com/albums/p391/maribhez/views_zpstuicxkoo.png "Views modificado")
+
+
+Probamos que funciona lanzando la aplicación de nuevo en local (con el comando *heroku local*) y accediendo a *localhost:5000* desde cualquier navegador. 
+
+![Localhost modificado](http://i345.photobucket.com/albums/p391/maribhez/prueba_local_index_zpsrtcf3uai.png "Localhost modificado.")
+
+Modificamos el repositorio:
+
+> git add .
+> git commit -m "Demo"
+> git push heroku master
+
+
+Queda de la siguiente manera en terminal:
+
+![Actualizar repositorio](http://i345.photobucket.com/albums/p391/maribhez/actualizar_git_zpstja1pzan.png "Actualizar repositorio.")
+
+>heroku open
+
+![Open Heroku](http://i345.photobucket.com/albums/p391/maribhez/open_teapot_zpsya2gwt3i.png "Open heroku)
+
+
+Probamos ahora mostrando la aplicación desde la consola:
+
+![Consola](http://i345.photobucket.com/albums/p391/maribhez/print_consola_zpsob4dtzki.png "Consola.")
+
+Para ver *dynos* más en profundidad y poder ver la aplicación desde dentro:
+
+![Bash](http://i345.photobucket.com/albums/p391/maribhez/bash_zpshzwtftbq.png "Bash")
+
+Una vez llegados hasta aquí tenemos que definir configuración de variables, y empezamos por modificar *hello/views.py*: 
+
+
+![Configurar variables](http://i345.photobucket.com/albums/p391/maribhez/configurar_variables_zpse88atte2.png "Configurar variables")
+
+Se podía haber configurado además una base de datos para nuestra aplicación, pero he parado aquí el proceso. 
+
+Ejecutando el siguiente comando podemos volver a lanzar en el navegador nuestra aplicación: 
+
+> heroku open 
+
+
+
+
+
+
+
+
+
+
+
