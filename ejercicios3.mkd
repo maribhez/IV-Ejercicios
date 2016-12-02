@@ -4,8 +4,25 @@
 
 **Darse de alta en algún servicio PaaS tal como Heroku, Nodejitsu, BlueMix u OpenShift.**
 
+Me he dado de alta en *Heroku*, que es lo usado en los ejercicios posteriores. 
 
-## Ejercicio 2.
+Al entrar en la página oficial y seleccionar la opción de registrase hemos de rellenar los campos requeridos. 
+
+![Basico](http://i345.photobucket.com/albums/p391/maribhez/basico_zpsaqjve6rv.png "Basico")
+
+![Relleno](http://i345.photobucket.com/albums/p391/maribhez/relleno_zpsktgfd7sm.png "Relleno")
+
+Ahora, se nos pide la confirmación de la contraseña y al final podremos acceder a nuestra cuenta recién creada. Por ejemplo, podríamos empezar creando nuestra primera aplicación.
+
+![Password](http://i345.photobucket.com/albums/p391/maribhez/password_heroku_zps0o3vlcak.png "Password")
+
+![Welcome](http://i345.photobucket.com/albums/p391/maribhez/welcome_heroku_zpspvigu5t1.png "Welcome")
+
+
+![App](http://i345.photobucket.com/albums/p391/maribhez/crearapp_zpsncbgojkf.png "App")
+
+
+## Ejercicio 2 - Ejercicio 5 (Por similitud en el enunciado).
 
 **Crear una aplicación en OpenShift o en algún otro PaaS en el que se haya dado uno de alta. Realizar un despliegue de prueba usando alguno de los ejemplos.**
 
@@ -137,13 +154,12 @@ De cara a seguir con Python, que es el lenguaje usado en el ejercicio anterior, 
 
 He creado una aplicación básica que devuelva una *página html* saludando al usuario que haya pasado su nombre como parámetro. De la misma forma, en caso de no introducir una *url correcta* le será devuelto un mensaje de error. 
 
->Añado el código a continuación:
+> Añado el código a continuación:
 
->from flask import Flask
+> from flask import Flask
 
->app = Flask(__name__, static_url_path = "", static_folder = "")
+> app = Flask(__name__, static_url_path = "", static_folder = "")
 
->#Método auxiliar.
 >def pagina(usuario):
 
 >    return """
@@ -157,18 +173,17 @@ He creado una aplicación básica que devuelva una *página html* saludando al u
 >                </html>
 >            """
 
->#Metodo que saludará a un usuario.
->@app.route('/user/<usuario>')
->def MostrarUsuario(usuario):
+> @app.route('/user/<usuario>')
+> def MostrarUsuario(usuario):
 >    return pagina(str(usuario))
 
 
->@app.errorhandler(404)
->def PageNotFound(error):
+> @app.errorhandler(404)
+> def PageNotFound(error):
 >    return "Página no encontrada", 404
 
 
-Para lanzar su ejecución: 
+Para lanzar su ejecución:
 
 ![Ejecución](http://i345.photobucket.com/albums/p391/maribhez/terminal_flask_zpszllhhznb.png "Ejecución")
 
@@ -180,13 +195,69 @@ Por último, las pruebas desde el navegador quedan de la siguiente forma:
 ![Error](http://i345.photobucket.com/albums/p391/maribhez/flask_parametros2_zps7nuhwdyc.png "Error")
 
 
+#Ejercicio 4.
+
+**Crear pruebas para las diferentes rutas de la aplicación. **
+
+Para esta aplicación he usado los test definidos para Flask, y el código ha quedado de la siguiente manera:
+
+>class Flask_Test(unittest.TestCase):
+
+>    def setUp(self):
+
+>        self.db_fd, prueba.app.config['DATABASE'] = tempfile.mkstemp()
+>        prueba.app.config['TESTING'] = True
+>        self.app = prueba.app.test_client()
+
+
+>    def tearDown(self):
+>        os.close(self.db_fd)
+>        os.unlink(prueba.app.config['DATABASE'])
+
+>    def test_principal(self):
+>        result = self.app.get('/user/juan')
+>        self.assertEqual(result.status_code, 200)
+
+
+>    def test_error(self):
+>        result = self.app.get('/fallo')
+>        self.assertEqual(result.status_code, 404)
 
 
 
+>if __name__ == '__main__':
+>    unittest.main()
 
 
+Tal y como podemos ver, después de configurar el test y la aplicación como correponde, se ha probado tanto la posibilidad de acceder a una página normal o la posibilidad de fallar y obtener la página de error.
+
+La salida a nuestro test la podemos ver en la siguiente captura:
+
+![Test](http://i345.photobucket.com/albums/p391/maribhez/test_zpshnbwaqkf.png "Test")
 
 
+#Ejercicio 7.
+
+**Haz alguna modificación a tu aplicación (sin olvidar añadir los tests para la nueva funcionalidad) y configura el despliegue automático a Heroku. **
 
 
+Como modificación a la aplicación he hecho una nueva página que mostrar, con el siguiente código, sabiendo de antemano que *nueva_funcionalidad* es la función que va a mostrar la página.
+
+###Código funcionalidad.
+
+>@app.route('/nuevo')
+>def Nuevo():
+>    return nueva_funcionalidad()
+
+###Código test.
+
+>def test_nuevo(self):
+>    result = self.app.get('/nuevo')
+>    self.assertEqual(result.status_code, 200)
+
+
+Además, para configurar el despliegue automático he tenido que sincronizar GitHub con la aplicación de *Heroku*, y activar las pruebas antes de cada despliegue. 
+
+
+![GIT-HEROKU](http://i345.photobucket.com/albums/p391/maribhez/github_zpszwppj7fs.png "GIT-HEROKU)
 
