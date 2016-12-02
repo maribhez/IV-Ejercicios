@@ -6,7 +6,7 @@
 
 Me he dado de alta en *Heroku*, que es lo usado en los ejercicios posteriores. 
 
-Al entrar en la página oficial y seleccionar la opción de registrase hemos de rellenar los campos requeridos. 
+Al entrar en la página oficial y seleccionar la opción de registrase hemos de rellenar los campos requeridos.
 
 ![Basico](http://i345.photobucket.com/albums/p391/maribhez/basico_zpsaqjve6rv.png "Basico")
 
@@ -18,6 +18,7 @@ Ahora, se nos pide la confirmación de la contraseña y al final podremos accede
 
 ![Welcome](http://i345.photobucket.com/albums/p391/maribhez/welcome_heroku_zpspvigu5t1.png "Welcome")
 
+Presento aquí la pantalla para empezar a configurar una aplicación.
 
 ![App](http://i345.photobucket.com/albums/p391/maribhez/crearapp_zpsncbgojkf.png "App")
 
@@ -49,7 +50,7 @@ Y se activa con:
 
 Para empezar con la aplicación y desplegarla en Heroku uno de los pasos es iniciar sesión y eso es lo que hacemos en:
 
-|[Inicio de sesión](http://i345.photobucket.com/albums/p391/maribhez/login_heroku_zpsko85ovnp.png "Iniciar sesión")
+![Inicio de sesión](http://i345.photobucket.com/albums/p391/maribhez/login_heroku_zpsko85ovnp.png "Iniciar sesión")
 
 
 Clonamos el repositorio que vamos a usar: 
@@ -122,7 +123,7 @@ Queda de la siguiente manera en terminal:
 
 >heroku open
 
-![Open Heroku](http://i345.photobucket.com/albums/p391/maribhez/open_teapot_zpsya2gwt3i.png "Open heroku)
+![Open Heroku](http://i345.photobucket.com/albums/p391/maribhez/open_teapot_zpsya2gwt3i.png "Open heroku")
 
 
 Probamos ahora mostrando la aplicación desde la consola:
