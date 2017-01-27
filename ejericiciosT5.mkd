@@ -28,6 +28,50 @@ Por último, para comprobar que no hay ningún error usamos *virsh list --all* y
 
 
 
+**Ejercicios 2.**
+
+**1. Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar *CoreOS*, *GALPon Minimo*, hecho en Galicia para el mundo, *Damn Small Linux*, SliTax (que cabe en 35 megas) y *ttylinux* (basado en línea de órdenes solo) **
+
+
+
+En este ejercicio he elegido las distribuciones *GalPon Minimo* y *Slitaz*, por lo que paso a especificar cuáles han sido los pasos seguidos. 
+
+* *GalPon Minimo*.
+
+![Instalación GalPon](http://i345.photobucket.com/albums/p391/maribhez/artabros0_zpssewk0x4d.png "Instalación GalPon.")
+
+![Configuración](http://i345.photobucket.com/albums/p391/maribhez/artabros1_zpsjybazrky.png "Configuración.")
+
+![Máquina lista](http://i345.photobucket.com/albums/p391/maribhez/artabros2_zpsfxkuqred.png "Máquina lista.")
+
+
+
+* *Slitaz*. Para este sistema se han seguido los mismos pasos. 
+
+![Instalación Slitaz](http://i345.photobucket.com/albums/p391/maribhez/instalacion1_zpsegpazxps.png "Instalación Slitaz.")
+
+![Máquina lista](http://i345.photobucket.com/albums/p391/maribhez/instalacion1completada_zpswbeszvc0.png "Máquina lista.")
+
+
+**2. Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.**
+
+
+Aquí he escogido 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
