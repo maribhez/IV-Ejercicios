@@ -18,7 +18,7 @@ Instalar el paquete *qemu-kvm* junto con otros necesarios:
 
 Añadimos ahora nuestro usuario a los siguientes grupos: 
 
-> sudo adduser maribhez libvirtd
+> sudo adduser maribhez libvirtd  
 > sudo adduser maribhez kvm 
 
 Por último, para comprobar que no hay ningún error usamos *virsh list --all* y vemos que está disponible el listado de nuestros dominios.
