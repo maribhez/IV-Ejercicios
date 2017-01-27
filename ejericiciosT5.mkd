@@ -2,13 +2,50 @@
 
 ## Ejercicio1.
 
-** Instalar los paquetes necesarios para usar KVM. Aunque ya se hizo en el primer tema, volver a comprobar si nuestro sistema está preparado para ejecutarlo o hay que conformarse con la paravirtualización. **
+**Instalar los paquetes necesarios para usar KVM. Aunque ya se hizo en el primer tema, volver a comprobar si nuestro sistema está preparado para ejecutarlo o hay que conformarse con la paravirtualización.**
 
 
 ![KVM](http://i345.photobucket.com/albums/p391/maribhez/Captura%20de%20pantalla%20de%202017-01-26%2023-40-25_zps59axdmu7.png "KVM")
 
-Queda reflejado aquí, igual que en los ejercicios del primer tema, que nuestro sistema está preparado para ejecutarlo.
+Queda reflejado aquí, igual que en los ejercicios del primer tema [Ejercicios](https://github.com/maribhez/IV-Ejercicios/blob/master/EjerciciosT1.md), que nuestro sistema está preparado para ejecutarlo.
 
-Siguiente el enlace pasado, [Sin titulo](https://wiki.debian.org/KVM#Installation), he instalado y configurado todo lo necesario para usar KVM. 
+Siguiente el enlace pasado, [Tutorial](https://wiki.debian.org/KVM#Installation), he instalado y configurado todo lo necesario para usar KVM. 
+
+
+Instalar el paquete *qemu-kvm* junto con otros necesarios: 
+
+> sudo apt-get install kvm qemu-kvm libvirt-bin virtinst
+
+Añadimos ahora nuestro usuario a los siguientes grupos: 
+
+> sudo adduser maribhez libvirtd
+> sudo adduser maribhez kvm 
+
+Por último, para comprobar que no hay ningún error usamos *virsh list --all* y vemos que está disponible el listado de nuestros dominios.
+
+
+![KVM-Final](http://i345.photobucket.com/albums/p391/maribhez/kvm-all_zpsnmwchfzb.png "KVM-Final")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
