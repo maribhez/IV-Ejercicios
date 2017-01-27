@@ -1,0 +1,14 @@
+# Práctica 5.
+
+## Ejercicio1.
+
+** Instalar los paquetes necesarios para usar KVM. Aunque ya se hizo en el primer tema, volver a comprobar si nuestro sistema está preparado para ejecutarlo o hay que conformarse con la paravirtualización. **
+
+
+![KVM](http://i345.photobucket.com/albums/p391/maribhez/Captura%20de%20pantalla%20de%202017-01-26%2023-40-25_zps59axdmu7.png "KVM")
+
+Queda reflejado aquí, igual que en los ejercicios del primer tema, que nuestro sistema está preparado para ejecutarlo.
+
+Siguiente el enlace pasado, [Sin titulo](https://wiki.debian.org/KVM#Installation), he instalado y configurado todo lo necesario para usar KVM. 
+
+

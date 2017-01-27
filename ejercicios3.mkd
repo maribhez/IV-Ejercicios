@@ -42,7 +42,7 @@ Además, será necesario tener instalado en nuestro sistema *Python*, *virtualen
 
 Para empezar a configurar hay que crear una carpeta *virtualenv* con el siguiente comando:
 
-> virtualenv proyecto_hito3 
+> virtualenv proyecto_hito3
 
 Y se activa con:
 
