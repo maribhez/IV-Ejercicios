@@ -27,7 +27,7 @@ Dicho archivo se crea con la configuración básica:
 
 ![Vagrant](http://i345.photobucket.com/albums/p391/maribhez/vagrantdebian_zpsafzhky5l.png "Vagrant")
 
-Haciendo uso de *vagrant ssh* accedemos a la máquina recién creada.
+Para desplegar la máquina usamos *vagrant up*, y después haciendo uso de *vagrant ssh* accedemos a la máquina recién creada.
 
 ![SSH](http://i345.photobucket.com/albums/p391/maribhez/ssh_zpsgfcrox5m.png "SSH")
 
