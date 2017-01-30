@@ -9,17 +9,17 @@
 
 Queda reflejado aquí, igual que en los ejercicios del primer tema [Ejercicios](https://github.com/maribhez/IV-Ejercicios/blob/master/EjerciciosT1.md), que nuestro sistema está preparado para ejecutarlo.
 
-Siguiente el enlace pasado, [Tutorial](https://wiki.debian.org/KVM#Installation), he instalado y configurado todo lo necesario para usar KVM. 
+Siguiente el enlace pasado, [Tutorial](https://wiki.debian.org/KVM#Installation), he instalado y configurado todo lo necesario para usar KVM.
 
 
-Instalar el paquete *qemu-kvm* junto con otros necesarios: 
+Instalar el paquete *qemu-kvm* junto con otros necesarios:
 
 > sudo apt-get install kvm qemu-kvm libvirt-bin virtinst
 
-Añadimos ahora nuestro usuario a los siguientes grupos: 
+Añadimos ahora nuestro usuario a los siguientes grupos:
 
 > sudo adduser maribhez libvirtd  
-> sudo adduser maribhez kvm 
+> sudo adduser maribhez kvm
 
 Por último, para comprobar que no hay ningún error usamos *virsh list --all* y vemos que está disponible el listado de nuestros dominios.
 
@@ -34,7 +34,7 @@ Por último, para comprobar que no hay ningún error usamos *virsh list --all* y
 
 
 
-En este ejercicio he elegido las distribuciones *GalPon Minimo* y *Slitaz*, por lo que paso a especificar cuáles han sido los pasos seguidos. 
+En este ejercicio he elegido las distribuciones *GalPon Minimo* y *Slitaz*, por lo que paso a especificar cuáles han sido los pasos seguidos.
 
 * *GalPon Minimo*.
 
@@ -46,7 +46,7 @@ En este ejercicio he elegido las distribuciones *GalPon Minimo* y *Slitaz*, por 
 
 
 
-* *Slitaz*. Para este sistema se han seguido los mismos pasos. 
+* *Slitaz*. Para este sistema se han seguido los mismos pasos.
 
 ![Instalación Slitaz](http://i345.photobucket.com/albums/p391/maribhez/instalacion1_zpsegpazxps.png "Instalación Slitaz.")
 
@@ -56,40 +56,13 @@ En este ejercicio he elegido las distribuciones *GalPon Minimo* y *Slitaz*, por 
 **2. Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.**
 
 
-Aquí he escogido 
+Aquí he escogido el hipervisor *VirtualBox* para aprovechar de esa forma que ya estaba instalado.
 
+Muestro en las siguientes capturas las máquinas anteriores pero ejecutando en dicho hipervisor.
 
+* *GalPon Minimo*.
+![VB-GalPon](http://i345.photobucket.com/albums/p391/maribhez/artabros1_zpsa9rsqndg.png "VB-GalPon")
 
+* *Slitaz*.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![Slitaz](http://i345.photobucket.com/albums/p391/maribhez/slitaz1_zpsem1s8nqr.png "Slitaz")
