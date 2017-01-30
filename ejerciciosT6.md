@@ -40,4 +40,35 @@ vagrant ssh
 
 ## Ejercicio 5.
 
-**Crear un script para provisionar 'nginx' o cualquier otro servidor web que pueda ser útil para alguna otra práctica. **
+**Crear un script para provisionar 'nginx' o cualquier otro servidor web que pueda ser útil para alguna otra práctica.**
+
+
+Para provisionar nginx hacemos uso de un Vagranfile (en este caso el creado en el ejercicio anterior) y de Ansible.
+
+En primer lugar añadimos el siguiente trozo de código a Vagranfile.
+
+~~~
+config.vm.provision "ansible" do |ansible|
+      ansible.sudo = true
+      ansible.playbook = "configuracion.yml"
+      ansible.verbose = "v"
+      ansible.host_key_checking = false
+end
+~~~
+
+Vemos aquí que aparece otro archivo llamado *configuracion.yml*, y es que nos valemos de él para configurar e instalar todo aquello que queremos que tenga nuestra máquina (en este caso nginx).
+
+Hemos de crear ese archivo y su contenido es:
+
+~~~
+- hosts: all
+  sudo: yes
+  remote_user: vagrant
+  tasks:
+  - name: Actualizacion de sistema.
+    command: sudo apt-get update
+  - name: Instalar servidor nginx.
+    apt: name=nginx state=present
+~~~
+
+Así, realizando *vagrant up* o *vagrant provision* (en caso de tener la máquina desplegada y siendo necesario este último paso) y teniendo en cuenta el uso de puertos del servidor podemos hacer uso de nginx sin ningún problema.
