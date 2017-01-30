@@ -1,4 +1,4 @@
-# Práctica 5.
+# Ejercicios 5.
 
 ## Ejercicio1.
 
@@ -30,7 +30,7 @@ Por último, para comprobar que no hay ningún error usamos *virsh list --all* y
 
 **Ejercicios 2.**
 
-**1. Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar *CoreOS*, *GALPon Minimo*, hecho en Galicia para el mundo, *Damn Small Linux*, SliTax (que cabe en 35 megas) y *ttylinux* (basado en línea de órdenes solo) **
+**1. Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar *CoreOS*, *GALPon Minimo*, hecho en Galicia para el mundo, *Damn Small Linux*, SliTax (que cabe en 35 megas) y *ttylinux* (basado en línea de órdenes solo)**
 
 
 
@@ -66,3 +66,17 @@ Muestro en las siguientes capturas las máquinas anteriores pero ejecutando en d
 * *Slitaz*.
 
 ![Slitaz](http://i345.photobucket.com/albums/p391/maribhez/slitaz1_zpsem1s8nqr.png "Slitaz")
+
+
+
+
+
+**Ejercicio 6**
+
+**Instalar una máquina virtual con LinuxMint para el hipervisor que tengas instalador.**
+
+Basta en este caso con descargar del [enlace adecuado](https://www.linuxmint.com/download.php "enlace adecuado") el archivo *.iso* para después crear la máquina virtual.
+
+Obtenemos de esta manera algo similar a lo mostrado en el ejercicios anterior.
+
+![LinuxMint](http://i345.photobucket.com/albums/p391/maribhez/linuxMint_zpsvlifjepw.png "LinuxMint")
